@@ -67,3 +67,10 @@ set mouse+=a
 set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
+" Indentation settings
+set autoindent
+set shiftwidth=0
+set tabstop=4
+
+" Enable language-specific config
+filetype plugin on
