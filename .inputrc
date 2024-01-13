@@ -1,0 +1,10 @@
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+
+# Do not bell on tab-completion
+set bell-style visible
+
+# Tab complete cycle through options instead of listing
+"\t": menu-complete
+"\e[Z": menu-complete-backward
