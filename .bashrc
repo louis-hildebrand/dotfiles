@@ -118,4 +118,4 @@ fi
 
 alias cls=clear
 set -o vi
-
+export PATH="$PATH:~/.dotnet/tools"
