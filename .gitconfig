@@ -1,0 +1,10 @@
+[init]
+	defaultBranch = main
+[user]
+	email = louis.hildebrand@mail.mcgill.ca
+	name = Louis Hildebrand
+[credential]
+	helper = /home/louis/.dotnet/tools/git-credential-manager
+	credentialStore = secretservice
+[credential "https://dev.azure.com"]
+	useHttpPath = true
