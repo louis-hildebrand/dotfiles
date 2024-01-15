@@ -119,3 +119,7 @@ fi
 alias cls=clear
 set -o vi
 export PATH="$PATH:~/.dotnet/tools"
+export PATH="$PATH:~/.local/bin"
+export PATH="$PATH:/usr/bin/java"
+export ANT_HOME=/usr/bin/ant/apache-ant-1.10.14
+export PATH="$ANT_HOME/bin:$PATH"
