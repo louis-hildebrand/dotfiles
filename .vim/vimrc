@@ -74,3 +74,8 @@ set tabstop=4
 
 " Enable language-specific config
 filetype plugin on
+
+" Reduce delay after pressing <esc>
+" https://vi.stackexchange.com/a/20220
+set timeoutlen=1000
+set ttimeoutlen=50
