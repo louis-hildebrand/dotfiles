@@ -123,6 +123,7 @@ export PATH="$PATH:/home/louis/local/bin"
 export PATH="$PATH:/usr/bin/java"
 export ANT_HOME=/usr/bin/ant/apache-ant-1.10.14
 export PATH="$ANT_HOME/bin:$PATH"
+export QSYS_ROOTDIR="/home/louis/intelFPGA_lite/21.1/quartus/sopc_builder/bin"
 
 ps1_green='\[\e[01;32m\]'
 ps1_blue='\[\e[01;34m\]'
