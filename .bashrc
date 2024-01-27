@@ -57,20 +57,35 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+	ps1_green='\[\e[01;32m\]'
+	ps1_blue='\[\e[01;34m\]'
+	ps1_resetcolor='\[\e[01;00m\]'
+	ps1_lineup='\e[1A'
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+	ps1_green=''
+	ps1_blue=''
+	ps1_resetcolor=''
+	ps1_lineup=''
 fi
 unset color_prompt force_color_prompt
+
+ps1_debian_chroot='${debian_chroot:+($debian_chroot)}'
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
 xterm*|rxvt*)
-    PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
-    ;;
+	ps1_title="\[\e]0;${debian_chroot}\u@\h: \w\a\]"
+	;;
 *)
-    ;;
+	ps1_title=''
+	;;
 esac
+
+ps1_time="\t"
+ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
+ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
+export PS1="${ps1_title}${ps1_debian_chroot}|${ps1_time}| ${ps1_pwd}${ps1_git} \$ "
+export PS0="${ps1_lineup}[${ps1_time}]\n"
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -86,11 +101,6 @@ fi
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -117,22 +127,9 @@ if ! shopt -oq posix; then
 fi
 
 alias cls=clear
-set -o vi
-export PATH="$PATH:/home/louis/.dotnet/tools"
-export PATH="$PATH:/home/louis/local/bin"
-export PATH="$PATH:/usr/bin/java"
-export ANT_HOME=/usr/bin/ant/apache-ant-1.10.14
-export PATH="$ANT_HOME/bin:$PATH"
-export QSYS_ROOTDIR="/home/louis/intelFPGA_lite/21.1/quartus/sopc_builder/bin"
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
 
-ps1_green='\[\e[01;32m\]'
-ps1_blue='\[\e[01;34m\]'
-ps1_resetcolor='\[\e[01;00m\]'
-ps1_lineup='\e[1A'
-ps1_title='\[\e]0;\u@\h: \w\a\]'
-ps1_debian_chroot='${debian_chroot:+($debian_chroot)}'
-ps1_time="\t"
-ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
-ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
-export PS1="${ps1_title}${ps1_debian_chroot}|${ps1_time}| ${ps1_pwd}${ps1_git} \$ "
-export PS0="${ps1_lineup}[${ps1_time}]\n"
+set -o vi
+
