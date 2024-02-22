@@ -8,3 +8,5 @@
 	credentialStore = secretservice
 [credential "https://dev.azure.com"]
 	useHttpPath = true
+[pull]
+	rebase = true
