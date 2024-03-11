@@ -79,3 +79,6 @@ filetype plugin on
 " https://vi.stackexchange.com/a/20220
 set timeoutlen=1000
 set ttimeoutlen=50
+
+" Let arrow keys wrap to previous or next line
+set whichwrap+=<,>,h,l,[,]
