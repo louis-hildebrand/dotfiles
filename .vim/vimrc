@@ -82,3 +82,8 @@ set ttimeoutlen=50
 
 " Let arrow keys wrap to previous or next line
 set whichwrap+=<,>,h,l,[,]
+
+" Indent wrapped lines
+set breakindent
+set breakindentopt=shift:2,min:40,sbr
+set showbreak=>>
