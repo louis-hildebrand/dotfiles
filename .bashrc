@@ -60,12 +60,10 @@ if [ "$color_prompt" = yes ]; then
 	ps1_green='\[\e[01;32m\]'
 	ps1_blue='\[\e[01;34m\]'
 	ps1_resetcolor='\[\e[01;00m\]'
-	ps1_lineup='\e[1A'
 else
 	ps1_green=''
 	ps1_blue=''
 	ps1_resetcolor=''
-	ps1_lineup=''
 fi
 unset color_prompt force_color_prompt
 
@@ -84,8 +82,7 @@ esac
 ps1_time="\t"
 ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
 ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
-export PS1="${ps1_title}${ps1_debian_chroot}|${ps1_time}| ${ps1_pwd}${ps1_git} \$ "
-export PS0="${ps1_lineup}[${ps1_time}]\n"
+export PS1="${ps1_title}${ps1_debian_chroot}[${ps1_time}] ${ps1_pwd}${ps1_git} \$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
