@@ -1,0 +1,46 @@
+{
+    "editor.quickSuggestions": {
+        "other": "inline",
+        "comments": "off",
+        "strings": "off"
+    },
+    "editor.suggestOnTriggerCharacters": false,
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.minimap.enabled": false,
+    "editor.insertSpaces": false,
+    "editor.tabSize": 4,
+    "editor.renderWhitespace": "all",
+    "editor.rulers": [
+        80
+    ],
+    "editor.codeActionsOnSave": {
+        "source.organizeImports": "always"
+    },
+    "workbench.startupEditor": "none",
+    "files.watcherExclude": {
+        "**/.bloop": true,
+        "**/.metals": true,
+        "**/.ammonite": true
+    },
+    "[scala]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.formatOnSave": true
+    },
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.insertSpaces": true
+    },
+    "explorer.confirmDragAndDrop": false,
+    "workbench.tree.expandMode": "doubleClick",
+    "hexeditor.columnWidth": 16,
+    "hexeditor.showDecodedText": true,
+    "hexeditor.defaultEndianness": "little",
+    "hexeditor.inspectorType": "aside",
+    "git.openRepositoryInParentFolders": "never",
+    "workbench.colorTheme": "Default Dark+",
+    "clangd.path": "/home/louis/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
+    "window.titleBarStyle": "custom",
+    "window.customMenuBarAltFocus": false
+}
