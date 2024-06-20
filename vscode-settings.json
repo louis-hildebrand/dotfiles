@@ -12,7 +12,8 @@
     "editor.tabSize": 4,
     "editor.renderWhitespace": "all",
     "editor.rulers": [
-        80
+        80,
+        120
     ],
     "editor.codeActionsOnSave": {
         "source.organizeImports": "always"
@@ -42,5 +43,6 @@
     "workbench.colorTheme": "Default Dark+",
     "clangd.path": "/home/louis/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
     "window.titleBarStyle": "custom",
-    "window.customMenuBarAltFocus": false
+    "window.customMenuBarAltFocus": false,
+    "latex-workshop.latex.outDir": "%DIR%/bin"
 }
