@@ -87,3 +87,14 @@ set whichwrap+=<,>,h,l,[,]
 set breakindent
 set breakindentopt=shift:2,min:40,sbr
 set showbreak=>>
+
+" Show that I'm in insert mode
+" https://stackoverflow.com/a/6489348
+:autocmd InsertEnter * set cursorline
+:autocmd InsertLeave * set nocursorline
+
+" Incremental search, highlight search results, and clear highlighting on
+" ENTER
+set incsearch
+set hlsearch
+nnoremap <CR> :noh<CR>
