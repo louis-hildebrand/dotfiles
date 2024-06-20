@@ -124,9 +124,11 @@ if ! shopt -oq posix; then
 fi
 
 alias cls=clear
+alias python=python3
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
+alias gdrive='rclone mount gdrive: ~/gdrive --vfs-cache-mode=full'
 
 set -o vi
 
