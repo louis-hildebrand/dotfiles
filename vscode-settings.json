@@ -33,6 +33,9 @@
         "editor.formatOnSave": true,
         "editor.insertSpaces": true
     },
+    "[rust]": {
+        "editor.formatOnSave": true
+    },
     "explorer.confirmDragAndDrop": false,
     "workbench.tree.expandMode": "doubleClick",
     "hexeditor.columnWidth": 16,
