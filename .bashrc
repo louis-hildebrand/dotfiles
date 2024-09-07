@@ -128,7 +128,9 @@ alias python=python3
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias gdrive='rclone mount gdrive: ~/gdrive --vfs-cache-mode=full'
+alias gdrive_mount='rclone mount gdrive: ~/gdrive --vfs-cache-mode=full'
+alias gdrive_pull='rclone sync gdrive: ~/gdrive-backup --progress --fast-list --track-renames'
+alias gdrive_push='rclone sync ~/gdrive-backup gdrive: --progress --fast-list --track-renames'
 
 set -o vi
 
