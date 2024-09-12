@@ -131,6 +131,7 @@ alias l='ls -CF'
 alias gdrive_mount='rclone mount gdrive: ~/gdrive --vfs-cache-mode=full'
 alias gdrive_pull='rclone sync gdrive: ~/gdrive-backup --progress --fast-list --track-renames'
 alias gdrive_push='rclone sync ~/gdrive-backup gdrive: --progress --fast-list --track-renames'
+alias gdrive_diff='rclone sync gdrive: ~/gdrive-backup --progress --fast-list --track-renames --dry-run'
 
 set -o vi
 
