@@ -57,10 +57,12 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
+    ps1_yellow='\[\e[01;33m\]'
 	ps1_green='\[\e[01;32m\]'
 	ps1_blue='\[\e[01;34m\]'
 	ps1_resetcolor='\[\e[01;00m\]'
 else
+    ps1_yellow=''
 	ps1_green=''
 	ps1_blue=''
 	ps1_resetcolor=''
@@ -68,9 +70,14 @@ fi
 unset color_prompt force_color_prompt
 
 ps1_time="\t"
+if [[ -z "${PS1_HIDE_USERHOST}" ]]; then
+    ps1_userhost="${ps1_yellow}\u@\h:${ps1_resetcolor}"
+else
+    ps1_userhost=""
+fi
 ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
 ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
-export PS1="[${ps1_time}] \u@\h:${ps1_pwd}${ps1_git} \$ "
+export PS1="[${ps1_time}] ${ps1_userhost}${ps1_pwd}${ps1_git} \$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
