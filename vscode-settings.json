@@ -47,5 +47,6 @@
     "clangd.path": "/home/louis/.config/Code/User/globalStorage/llvm-vs-code-extensions.vscode-clangd/install/18.1.3/clangd_18.1.3/bin/clangd",
     "window.titleBarStyle": "custom",
     "window.customMenuBarAltFocus": false,
-    "latex-workshop.latex.outDir": "%DIR%/bin"
+    "latex-workshop.latex.outDir": "%DIR%/bin",
+    "files.trimTrailingWhitespace": true
 }
