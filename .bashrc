@@ -67,22 +67,10 @@ else
 fi
 unset color_prompt force_color_prompt
 
-ps1_debian_chroot='${debian_chroot:+($debian_chroot)}'
-
-# If this is an xterm set the title to user@host:dir
-case "$TERM" in
-xterm*|rxvt*)
-	ps1_title="\[\e]0;${debian_chroot}\u@\h: \w\a\]"
-	;;
-*)
-	ps1_title=''
-	;;
-esac
-
 ps1_time="\t"
 ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
 ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
-export PS1="${ps1_title}${ps1_debian_chroot}[${ps1_time}] ${ps1_pwd}${ps1_git} \$ "
+export PS1="[${ps1_time}] \u@\h:${ps1_pwd}${ps1_git} \$ "
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
