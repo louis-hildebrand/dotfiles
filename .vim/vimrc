@@ -68,6 +68,7 @@ set list
 set listchars=tab:»\ ,extends:›,precedes:‹,nbsp:·,trail:·
 
 " Indentation settings
+set expandtab
 set autoindent
 set shiftwidth=0
 set tabstop=4
@@ -106,3 +107,7 @@ nnoremap <CR> :noh<CR>
 " For some reason, tmux doesn't detect this by default
 " https://unix.stackexchange.com/a/363374
 set background=dark
+
+" Keep highlight after indenting
+vnoremap < <gv
+vnoremap > >gv
