@@ -17,6 +17,7 @@ else
 	echo "source ${dotfiles_dir}/.bashrc" >> "${HOME}/.bashrc"
 fi
 ln -s "${dotfiles_dir}/.gitconfig"            "${HOME}/.gitconfig"
+ln -s "${dotfiles_dir}/.curlrc"               "${HOME}/.curlrc"
 ln -s "${dotfiles_dir}/.inputrc"              "${HOME}/.inputrc"
 ln -s "${dotfiles_dir}/.tmux.conf"            "${HOME}/.tmux.conf"
 ln -s "${dotfiles_dir}/.vim/"                 "${HOME}/.vim"
