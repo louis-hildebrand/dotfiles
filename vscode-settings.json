@@ -24,6 +24,9 @@
         "**/.metals": true,
         "**/.ammonite": true
     },
+    "[java]": {
+        "editor.formatOnSave": true
+    },
     "[scala]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
@@ -48,5 +51,8 @@
     "window.titleBarStyle": "custom",
     "window.customMenuBarAltFocus": false,
     "latex-workshop.latex.outDir": "%DIR%/bin",
-    "files.trimTrailingWhitespace": true
+    "files.trimTrailingWhitespace": true,
+    "[vue]": {
+        "editor.defaultFormatter": "Vue.volar"
+    }
 }
