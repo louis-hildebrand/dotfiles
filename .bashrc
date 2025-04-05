@@ -125,14 +125,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ff='2> /dev/null firefox'
 
-alias gdrive_pull='rclone copy gdrive: ~/gdrive --progress --fast-list'
-alias gdrive_push='rclone copy ~/gdrive gdrive: --progress --fast-list'
-alias gdrive_diff='rclone sync gdrive: ~/gdrive --progress --fast-list --track-renames --dry-run'
-
-alias onedrive_mount='rclone mount onedrive: ~/onedrive --vfs-cache-mode=full'
-alias onedrive_pull='rclone copy onedrive: ~/onedrive-backup --progress --fast-list'
-alias onedrive_push='rclone copy ~/onedrive-backup onedrive: --progress --fast-list'
-alias onedrive_diff='rclone sync onedrive: ~/onedrive-backup --progress --fast-list --track-renames --dry-run'
+alias rcs='rclone sync --fast-list --track-renames'
 
 set -o vi
 
