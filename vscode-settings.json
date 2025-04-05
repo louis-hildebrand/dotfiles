@@ -39,6 +39,13 @@
     "[rust]": {
         "editor.formatOnSave": true
     },
+    "[ocaml]": {
+        "editor.formatOnSave": true
+    },
+    "[haskell]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
     "explorer.confirmDragAndDrop": false,
     "workbench.tree.expandMode": "doubleClick",
     "hexeditor.columnWidth": 16,
@@ -54,5 +61,7 @@
     "files.trimTrailingWhitespace": true,
     "[vue]": {
         "editor.defaultFormatter": "Vue.volar"
-    }
+    },
+    "python.createEnvironment.trigger": "off",
+    "haskell.manageHLS": "GHCup"
 }
