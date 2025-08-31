@@ -127,5 +127,4 @@ alias ff='2> /dev/null firefox'
 
 alias rcs='rclone sync --fast-list --track-renames'
 
-set -o vi
-
+alias g='git'
