@@ -63,5 +63,7 @@
         "editor.defaultFormatter": "Vue.volar"
     },
     "python.createEnvironment.trigger": "off",
-    "haskell.manageHLS": "GHCup"
+    "files.associations": {
+        "*.py": "python"
+    },
 }
