@@ -103,3 +103,6 @@ set background=dark
 " Keep highlight after indenting
 vnoremap < <gv
 vnoremap > >gv
+
+" Shift+TAB to unindent when in insert mode
+inoremap <S-Tab> <C-d>
