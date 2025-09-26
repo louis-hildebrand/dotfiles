@@ -1,18 +1,19 @@
 [init]
-	defaultBranch = main
+    defaultBranch = main
 [user]
-	email = louis.hildebrand@mail.mcgill.ca
-	name = Louis Hildebrand
+    email = louis.hildebrand@mail.mcgill.ca
+    name = Louis Hildebrand
 [credential]
-	helper = ! ~/.dotnet/tools/git-credential-manager
-	credentialStore = secretservice
+    helper = ! ~/.dotnet/tools/git-credential-manager
+    credentialStore = secretservice
 [credential "https://dev.azure.com"]
-	useHttpPath = true
+    useHttpPath = true
 [pull]
-	rebase = true
+    rebase = true
 [alias]
-	s = 'status'
-	a = 'add'
-	c = 'commit'
+    s = 'status'
+    a = 'add'
+    c = 'commit'
     sw = 'switch'
     graph = 'log --graph --all --oneline'
+    df = diff
