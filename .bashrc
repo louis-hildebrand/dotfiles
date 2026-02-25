@@ -120,22 +120,7 @@ fi
 
 alias cls=clear
 alias python=python3
-function ordot {
-    if [[ "$1" = "" ]]; then
-        echo "."
-    else
-        echo "$1"
-    fi
-}
-function lld {
-    ls "$(ordot "$1")" -alF --color=yes | grep '^d' --color=NEVER
-}
-function llf {
-    ls "$(ordot "$1")" -alF --color=yes | grep '^(d|total)' --invert-match --extended-regexp --color=NEVER
-}
-function ll {
-    lld "$1" && llf "$1"
-}
+alias ll='ls -alv --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias ff='2> /dev/null firefox'
