@@ -130,3 +130,13 @@ alias rcs='rclone sync --fast-list --track-renames'
 alias g='git'
 source /usr/share/bash-completion/completions/git
 __git_complete g _git_main
+
+function up {
+    n="$1"
+    if [[ "$n" -ge 1 ]]; then
+        target="$(for _ in $(seq 1 "$n"); do echo -n "../"; done)"
+        echo "$target"
+    else
+        echo "."
+    fi
+}
