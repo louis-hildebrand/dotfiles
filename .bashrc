@@ -76,7 +76,11 @@ else
     ps1_userhost=""
 fi
 ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
-ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
+if command -v __git_ps1; then
+    ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
+else
+    ps1_git=""
+fi
 export PS1="[${ps1_time}] ${ps1_userhost}${ps1_pwd}${ps1_git} \$ "
 
 # enable color support of ls and also add handy aliases
@@ -128,8 +132,12 @@ alias ff='2> /dev/null firefox'
 alias rcs='rclone sync --fast-list --track-renames'
 
 alias g='git'
-source /usr/share/bash-completion/completions/git
-__git_complete g _git_main
+if [[ -d /usr/share/bash-completion/completions/git ]]; then
+    source /usr/share/bash-completion/completions/git
+fi
+if command -v __git_complete; then
+    __git_complete g _git_main
+fi
 
 function up {
     n="$1"
