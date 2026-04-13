@@ -135,7 +135,7 @@ alias g='git'
 if [[ -d /usr/share/bash-completion/completions/git ]]; then
     source /usr/share/bash-completion/completions/git
 fi
-if command -v __git_complete >/dev/null 2>&1; then
+if command -v __git_complete >/dev/null 2>&1 && command -v _git_main >/dev/null 2>&1; then
     __git_complete g _git_main
 fi
 

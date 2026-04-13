@@ -3,8 +3,6 @@
 [user]
     email = louis.hildebrand@mail.mcgill.ca
     name = Louis Hildebrand
-[credential]
-    credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
 [pull]
@@ -16,3 +14,7 @@
     sw = 'switch'
     graph = 'log --graph --all --oneline'
     df = diff
+[push]
+	default = simple
+[merge]
+	defaultToUpstream = true
