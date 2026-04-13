@@ -26,6 +26,6 @@ ln -s "${dotfiles_dir}/vscode-settings.json"  "${HOME}/.config/Code/User/setting
 # Remove note about sudo
 touch ~/.sudo_as_admin_successful
 
-# Set up Git Credential Manager
-dotnet tool install -g git-credential-manager
-git-credential-manager configure
+# # Set up Git Credential Manager
+# dotnet tool install -g git-credential-manager
+# git-credential-manager configure
