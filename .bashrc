@@ -76,7 +76,7 @@ else
     ps1_userhost=""
 fi
 ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
-if command -v __git_ps1; then
+if command -v __git_ps1 >/dev/null 2>&1; then
     ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
 else
     ps1_git=""
@@ -135,7 +135,7 @@ alias g='git'
 if [[ -d /usr/share/bash-completion/completions/git ]]; then
     source /usr/share/bash-completion/completions/git
 fi
-if command -v __git_complete; then
+if command -v __git_complete >/dev/null 2>&1; then
     __git_complete g _git_main
 fi
 
