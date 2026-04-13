@@ -4,7 +4,6 @@
     email = louis.hildebrand@mail.mcgill.ca
     name = Louis Hildebrand
 [credential]
-    helper = ! ~/.dotnet/tools/git-credential-manager
     credentialStore = secretservice
 [credential "https://dev.azure.com"]
     useHttpPath = true
