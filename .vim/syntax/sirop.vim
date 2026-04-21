@@ -6,7 +6,7 @@ if exists("b:current_syntax")
 endif
 
 syn keyword siropBasicKeyword if then else letstm let in accelerator const
-syn keyword siropBasicKeyword vbuild sbuild init next stm ready sdata undefined
+syn keyword siropBasicKeyword vbuild sbuild init next stm ready sdata undefined default
 
 syn keyword siropConstant true false
 syn match siropConstant '[0-9_]\+'
@@ -30,11 +30,13 @@ syn keyword siropBuiltin VecZip         StmZip
 syn keyword siropBuiltin VecReduce      StmReduce
 syn keyword siropBuiltin VecSplit       StmSplit
 syn keyword siropBuiltin VecJoin        StmJoin
+syn keyword siropBuiltin VecConcat      StmConcat
 syn keyword siropBuiltin VecReverse
 syn keyword siropBuiltin VecTranspose
 syn keyword siropBuiltin                StmRange
 syn keyword siropBuiltin                StmCount2D
 syn keyword siropBuiltin                StmSlide
+syn keyword siropBuiltin                StmSlideInit
 syn keyword siropBuiltin                StmSlide2D
 syn keyword siropBuiltin                StmAccess
 syn keyword siropBuiltin                StmPrefix
