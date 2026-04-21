@@ -5,7 +5,7 @@ if exists("b:current_syntax")
     finish
 endif
 
-syn keyword siropBasicKeyword if then else letstm let in
+syn keyword siropBasicKeyword if then else letstm let in accelerator const
 syn keyword siropBasicKeyword vbuild sbuild init next stm ready sdata undefined
 
 syn keyword siropConstant true false
@@ -25,13 +25,20 @@ syn keyword siropBuiltin min max
 syn keyword siropBuiltin VecLength
 syn keyword siropBuiltin Vec2Stm        Stm2Vec
 syn keyword siropBuiltin VecMap         StmMap
-syn keyword siropBuiltin                StmMap2
-syn keyword siropBuiltin VecReduce      StmReduce
+syn keyword siropBuiltin VecMap2        StmMap2
 syn keyword siropBuiltin VecZip         StmZip
+syn keyword siropBuiltin VecReduce      StmReduce
+syn keyword siropBuiltin VecSplit       StmSplit
+syn keyword siropBuiltin VecJoin        StmJoin
 syn keyword siropBuiltin VecReverse
+syn keyword siropBuiltin VecTranspose
 syn keyword siropBuiltin                StmRange
+syn keyword siropBuiltin                StmCount2D
 syn keyword siropBuiltin                StmSlide
+syn keyword siropBuiltin                StmSlide2D
 syn keyword siropBuiltin                StmAccess
+syn keyword siropBuiltin                StmPrefix
+syn keyword siropBuiltin                StmSuffix
 
 syn region siropComment start='/\*' end='\*/' contains=siropComment
 
