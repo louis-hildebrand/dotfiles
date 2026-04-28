@@ -7,6 +7,7 @@ endif
 
 syn keyword siropBasicKeyword if then else letstm let in accelerator const
 syn keyword siropBasicKeyword vbuild sbuild init next stm ready sdata undefined default
+syn keyword siropBasicKeyword assert yields
 
 syn keyword siropConstant true false
 syn match siropConstant '[0-9_]\+'
