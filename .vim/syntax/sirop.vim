@@ -32,8 +32,10 @@ syn keyword siropBuiltin VecReduce      StmReduce
 syn keyword siropBuiltin VecSplit       StmSplit
 syn keyword siropBuiltin VecJoin        StmJoin
 syn keyword siropBuiltin VecConcat      StmConcat
+syn keyword siropBuiltin VecShiftLeft   StmShiftLeft
 syn keyword siropBuiltin VecReverse
 syn keyword siropBuiltin VecTranspose
+syn keyword siropBuiltin VecCst         StmCst
 syn keyword siropBuiltin VecRange       StmRange
 syn keyword siropBuiltin                StmCount2D
 syn keyword siropBuiltin                StmSlide
