@@ -44,6 +44,7 @@ syn keyword siropBuiltin                StmSlide2D
 syn keyword siropBuiltin                StmAccess
 syn keyword siropBuiltin                StmPrefix
 syn keyword siropBuiltin                StmSuffix
+syn keyword siropBuiltin MulAddCascaded
 
 syn region siropComment start='/\*' end='\*/' contains=siropComment
 
