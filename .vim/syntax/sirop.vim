@@ -29,6 +29,9 @@ syn keyword siropBuiltin VecMap         StmMap
 syn keyword siropBuiltin VecMap2        StmMap2
 syn keyword siropBuiltin VecZip         StmZip
 syn keyword siropBuiltin VecReduce      StmReduce
+syn keyword siropBuiltin VecAll         StmAll
+syn keyword siropBuiltin VecAny         StmAny
+syn keyword siropBuiltin VecSum         StmSum
 syn keyword siropBuiltin VecSplit       StmSplit
 syn keyword siropBuiltin VecJoin        StmJoin
 syn keyword siropBuiltin VecConcat      StmConcat
