@@ -42,7 +42,7 @@ syn keyword siropBuiltin VecCst         StmCst
 syn keyword siropBuiltin VecRange       StmRange
 syn keyword siropBuiltin                StmCount2D
 syn keyword siropBuiltin                StmSlide
-syn keyword siropBuiltin                StmSlideInit
+syn keyword siropBuiltin                StmSlideStartingWith
 syn keyword siropBuiltin                StmSlide2D
 syn keyword siropBuiltin                StmAccess
 syn keyword siropBuiltin                StmPrefix
