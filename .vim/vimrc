@@ -106,3 +106,6 @@ vnoremap > >gv
 
 " Shift+TAB to unindent when in insert mode
 inoremap <S-Tab> <C-d>
+
+" Highlight comments in red
+hi Comment ctermfg=red
