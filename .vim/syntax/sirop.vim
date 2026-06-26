@@ -7,7 +7,7 @@ endif
 
 syn keyword siropBasicKeyword if then else letstm let in accelerator const
 syn keyword siropBasicKeyword vbuild sbuild init next stm ready sdata undefined default
-syn keyword siropBasicKeyword assert yields
+syn keyword siropBasicKeyword assert yields ignoring
 
 syn keyword siropConstant true false
 syn match siropConstant '[0-9_]\+'
@@ -23,6 +23,8 @@ syn match siropBuiltin 'pad\d\+'
 syn match siropBuiltin 'truncate\d\+'
 syn keyword siropBuiltin sign unsign
 syn keyword siropBuiltin min max
+syn keyword siropBuiltin bits interpret_as
+syn keyword siropBuiltin zeros ones
 syn keyword siropBuiltin VecLength
 syn keyword siropBuiltin Vec2Stm        Stm2Vec
 syn keyword siropBuiltin VecMap         StmMap
