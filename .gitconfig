@@ -12,8 +12,7 @@
     a = 'add'
     c = 'commit'
     sw = 'switch'
-    graph = 'log --graph --all --oneline'
-    df = diff
+    graph = log --graph --all --oneline
 [push]
 	default = simple
 [merge]
