@@ -17,3 +17,5 @@
 	default = simple
 [merge]
 	defaultToUpstream = true
+[core]
+	editor = vim
