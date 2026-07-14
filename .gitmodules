@@ -1,0 +1,3 @@
+[submodule ".vim/pack/vendor/start/sirop"]
+	path = .vim/pack/vendor/start/sirop
+	url = git@github.com:louis-hildebrand/sirop-vim.git
