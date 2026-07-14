@@ -1,0 +1,54 @@
+#!/bin/bash
+# vim: noexpandtab:tabstop=4
+
+set -ue
+
+function create_symlink {
+	target="$1"
+	name="$2"
+	if [[ -L "${name}" ]]; then
+		echo "overwriting existing symlink at ${name} to point to ${target}"
+		ln -sf "${target}" "${name}"
+	elif [[ -e "${name}" ]]; then
+		echo "WARN: skipping creating symlink at ${name}, since the file already exists"
+	else
+		echo "creating symlink at ${name} pointing to ${target}"
+		ln -s "${target}" "${name}"
+	fi
+}
+
+dotfiles_dir="$(dirname "$(readlink --canonicalize "$0")")"
+
+echo "setting up using dotfiles directory ${dotfiles_dir}"
+echo ""
+
+if [[ -f "${HOME}/.bashrc" ]]; then
+	source_command="source ${dotfiles_dir}/.bashrc"
+	if grep "${source_command}" "${HOME}/.bashrc" &>/dev/null; then
+		echo ".bashrc already sources ${dotfiles_dir}/.bashrc, so nothing to do"
+	else
+		echo "appending to existing .bashrc"
+		echo ""                               >> "${HOME}/.bashrc"
+		echo "# ----- Shared config -----"    >> "${HOME}/.bashrc"
+		echo "${source_command}"              >> "${HOME}/.bashrc"
+	fi
+else
+	echo "creating new .bashrc"
+	echo "#!/bin/bash"                     > "${HOME}/.bashrc"
+	echo ""                               >> "${HOME}/.bashrc"
+	echo "# ----- Shared config -----"    >> "${HOME}/.bashrc"
+	echo "source ${dotfiles_dir}/.bashrc" >> "${HOME}/.bashrc"
+fi
+
+create_symlink "${dotfiles_dir}/.gitconfig" "${HOME}/.gitconfig"
+create_symlink "${dotfiles_dir}/.curlrc"    "${HOME}/.curlrc"
+create_symlink "${dotfiles_dir}/.inputrc"   "${HOME}/.inputrc"
+create_symlink "${dotfiles_dir}/.tmux.conf" "${HOME}/.tmux.conf"
+create_symlink "${dotfiles_dir}/.vim"       "${HOME}/.vim"
+
+# Remove note about sudo
+echo "creating ~/.sudo_as_admin_successful"
+touch ~/.sudo_as_admin_successful
+
+echo ""
+echo "TODO: to set up the Gnome dock, also run the gnome-settings script"
