@@ -40,48 +40,51 @@ case "$TERM" in
     xterm-color|*-256color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-#force_color_prompt=yes
+function change_prompt {
+    # uncomment for a colored prompt, if the terminal has the capability; turned
+    # off by default to not distract the user: the focus in a terminal window
+    # should be on the output of commands, not on the prompt
+    #force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	# We have color support; assume it's compliant with Ecma-48
-	# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-	# a case would tend to support setf rather than setaf.)
-	color_prompt=yes
-    else
-	color_prompt=
+    if [ -n "$force_color_prompt" ]; then
+        if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+        # We have color support; assume it's compliant with Ecma-48
+        # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+        # a case would tend to support setf rather than setaf.)
+        color_prompt=yes
+        else
+        color_prompt=
+        fi
     fi
-fi
 
-if [ "$color_prompt" = yes ]; then
-    ps1_yellow='\[\e[01;33m\]'
-	ps1_green='\[\e[01;32m\]'
-	ps1_blue='\[\e[01;34m\]'
-	ps1_resetcolor='\[\e[01;00m\]'
-else
-    ps1_yellow=''
-	ps1_green=''
-	ps1_blue=''
-	ps1_resetcolor=''
-fi
-unset color_prompt force_color_prompt
+    if [ "$color_prompt" = yes ]; then
+        ps1_yellow='\[\e[01;33m\]'
+        ps1_green='\[\e[01;32m\]'
+        ps1_blue='\[\e[01;34m\]'
+        ps1_resetcolor='\[\e[01;00m\]'
+    else
+        ps1_yellow=''
+        ps1_green=''
+        ps1_blue=''
+        ps1_resetcolor=''
+    fi
+    unset color_prompt force_color_prompt
 
-ps1_time="\t"
-if [[ -z "${PS1_HIDE_USERHOST}" ]]; then
-    ps1_userhost="${ps1_yellow}\u@\h:${ps1_resetcolor}"
-else
-    ps1_userhost=""
-fi
-ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
-if command -v __git_ps1 >/dev/null 2>&1; then
-    ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
-else
-    ps1_git=""
-fi
-export PS1="[${ps1_time}] ${ps1_userhost}${ps1_pwd}${ps1_git} \$ "
+    ps1_time="\t"
+    if [[ -z "${PS1_HIDE_USERHOST}" ]]; then
+        ps1_userhost="${ps1_yellow}\u@\h:${ps1_resetcolor}"
+    else
+        ps1_userhost=""
+    fi
+    ps1_pwd="${ps1_blue}\w${ps1_resetcolor}"
+    if command -v __git_ps1 >/dev/null 2>&1; then
+        ps1_git="${ps1_green}\$(__git_ps1)${ps1_resetcolor}"
+    else
+        ps1_git=""
+    fi
+    export PS1="[${ps1_time}] ${ps1_userhost}${ps1_pwd}${ps1_git} \$ "
+    export GIT_PS1_SHOWDIRTYSTATE=yes
+}
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
@@ -138,6 +141,9 @@ fi
 if command -v __git_complete >/dev/null 2>&1 && command -v _git_main >/dev/null 2>&1; then
     __git_complete g _git_main
 fi
+# Wait until after sourcing /usr/share/bash-completion/completions/git, since
+# that is (sometimes) where __git_ps1 is defined
+change_prompt
 
 function up {
     n="$1"
