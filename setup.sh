@@ -21,11 +21,6 @@ ln -s "${dotfiles_dir}/.curlrc"               "${HOME}/.curlrc"
 ln -s "${dotfiles_dir}/.inputrc"              "${HOME}/.inputrc"
 ln -s "${dotfiles_dir}/.tmux.conf"            "${HOME}/.tmux.conf"
 ln -s "${dotfiles_dir}/.vim/"                 "${HOME}/.vim"
-ln -s "${dotfiles_dir}/vscode-settings.json"  "${HOME}/.config/Code/User/settings.json"
 
 # Remove note about sudo
 touch ~/.sudo_as_admin_successful
-
-# # Set up Git Credential Manager
-# dotnet tool install -g git-credential-manager
-# git-credential-manager configure
