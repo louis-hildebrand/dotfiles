@@ -1,4 +1,15 @@
 #!/bin/bash
 
 gsettings set org.gnome.shell.extensions.dash-to-dock isolate-workspaces true
+
+# Clicking an app icon in the dock should minimize the app if it's already open
 gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize-or-previews'
+
+# Ensure Super+NUM behaves the same way as clicking on the corresponding app in the dock
+# (i.e., minimize if open)
+for i in $(seq 1 9); do
+    # (1) Ensure the other keybinding doesn't interfere
+    gsettings set org.gnome.shell.keybindings "switch-to-application-$i" '[]'
+    # (2) Ensure the desired keybinding is set correctly
+    gsettings set org.gnome.shell.extensions.dash-to-dock "app-hotkey-$i" "['<Super>$i']"
+done
