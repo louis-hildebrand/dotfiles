@@ -109,3 +109,8 @@ inoremap <S-Tab> <C-d>
 
 " Highlight comments in red
 hi Comment ctermfg=red
+
+" Copy to xclip with "yy
+" Paste from xclip with "pp
+vnoremap "yy "yy <Bar> :call system('xclip -sel clip', @")<CR>
+noremap  "pp :r!xclip -sel clip -o<CR>
