@@ -114,3 +114,7 @@ hi Comment ctermfg=red
 " Paste from xclip with "pp
 vnoremap "yy "yy <Bar> :call system('xclip -sel clip', @")<CR>
 noremap  "pp :r!xclip -sel clip -o<CR>
+
+" When jumping to a mark, also move the screen so the mark is at the same
+" position (relative to the top of the screen) as when it was set
+set jumpoptions+=view
