@@ -29,13 +29,6 @@ set laststatus=2
 " backspace over anything.
 set backspace=indent,eol,start
 
-" By default, Vim doesn't let you hide a buffer (i.e. have a buffer that isn't
-" shown in any window) that has unsaved changes. This is to prevent you from "
-" forgetting about unsaved changes and then quitting e.g. via `:qa!`. We find
-" hidden buffers helpful enough to disable this protection. See `:help hidden`
-" for more information on this.
-set hidden
-
 " This setting makes search case-insensitive when all characters in the string
 " being searched are lowercase. However, the search becomes case-sensitive if
 " it contains any capital letters. This makes searching more convenient.
@@ -114,3 +107,16 @@ hi Comment ctermfg=red
 " Paste from xclip with "pp
 vnoremap "yy "yy <Bar> :call system('xclip -sel clip', @")<CR>
 noremap  "pp :r!xclip -sel clip -o<CR>
+
+" Suppose I have a very long line which Vim wraps across multiple lines, and
+" suppose my cursor is on 'A'.
+" (The line numbers are not part of the text.)
+"    Line 1: ---A---------------------------------------------------------------
+"   Still 1: ---B---------------------------------------------------------------
+"   Still 1: ---C---------------------------------------------------------------
+"    Line 2: ---D---------------------------------------------------------------
+" If I press down, I want to move to B.
+" But by default, Vim actually moves to D (the next "real" line)!
+" Likewise, if I'm on D and press up, I want to go to C rather than A.
+nnoremap <Up>   gk
+nnoremap <Down> gj
