@@ -1,0 +1,9 @@
+set runtimepath^=~/.vim
+set runtimepath+=~/.vim/after
+
+let &packpath = &runtimepath
+
+source ~/.vim/vimrc
+
+colorscheme unokai
+highlight clear Identifier

@@ -8,7 +8,7 @@ function create_symlink {
 	name="$2"
 	if [[ -L "${name}" ]]; then
 		echo "overwriting existing symlink at ${name} to point to ${target}"
-		ln -sf "${target}" "${name}"
+		ln -snf "${target}" "${name}"
 	elif [[ -e "${name}" ]]; then
 		echo "WARN: skipping creating symlink at ${name}, since the file already exists"
 	else
@@ -40,11 +40,13 @@ else
 	echo "source ${dotfiles_dir}/.bashrc" >> "${HOME}/.bashrc"
 fi
 
-create_symlink "${dotfiles_dir}/.gitconfig" "${HOME}/.gitconfig"
-create_symlink "${dotfiles_dir}/.curlrc"    "${HOME}/.curlrc"
-create_symlink "${dotfiles_dir}/.inputrc"   "${HOME}/.inputrc"
-create_symlink "${dotfiles_dir}/.tmux.conf" "${HOME}/.tmux.conf"
-create_symlink "${dotfiles_dir}/.vim"       "${HOME}/.vim"
+create_symlink "${dotfiles_dir}/.gitconfig"    "${HOME}/.gitconfig"
+create_symlink "${dotfiles_dir}/.curlrc"       "${HOME}/.curlrc"
+create_symlink "${dotfiles_dir}/.inputrc"      "${HOME}/.inputrc"
+create_symlink "${dotfiles_dir}/.tmux.conf"    "${HOME}/.tmux.conf"
+create_symlink "${dotfiles_dir}/.vim"          "${HOME}/.vim"
+mkdir -p "${HOME}/.config/nvim"
+create_symlink "${dotfiles_dir}/nvim/init.vim" "${HOME}/.config/nvim/init.vim"
 
 # Remove note about sudo
 echo "creating ~/.sudo_as_admin_successful"
