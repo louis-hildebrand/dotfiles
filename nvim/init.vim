@@ -6,4 +6,3 @@ let &packpath = &runtimepath
 source ~/.vim/vimrc
 
 colorscheme unokai
-highlight clear Identifier
