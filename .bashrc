@@ -154,3 +154,11 @@ function up {
         echo "."
     fi
 }
+
+function eject {
+    if ! udisksctl info -b "$1" >/dev/null 2>&1 ; then
+        >&2 echo "'udisksctl info -b' failed. Is '$1' a valid block device?"
+        return 1
+    fi
+    udisksctl unmount -b "$1" && udisksctl power-off -b "$1"
+}
