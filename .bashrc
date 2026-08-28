@@ -127,7 +127,7 @@ fi
 
 alias cls=clear
 alias python=python3
-alias ll='ls -alv --group-directories-first'
+alias ll='ls -alvh --group-directories-first'
 alias la='ls -A'
 alias l='ls -CF'
 alias ff='2> /dev/null firefox'
