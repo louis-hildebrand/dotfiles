@@ -120,3 +120,5 @@ noremap  "pp :r!xclip -sel clip -o<CR>
 " Likewise, if I'm on D and press up, I want to go to C rather than A.
 nnoremap <Up>   gk
 nnoremap <Down> gj
+
+let g:netrw_liststyle = 3
