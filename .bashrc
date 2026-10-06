@@ -132,7 +132,7 @@ alias la='ls -A'
 alias l='ls -CF'
 alias ff='2> /dev/null firefox'
 
-alias rcs='rclone sync --fast-list --track-renames'
+alias rcs='rclone sync --fast-list --track-renames --links'
 
 alias g='git'
 if [[ -d /usr/share/bash-completion/completions/git ]]; then
