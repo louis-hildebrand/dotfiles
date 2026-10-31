@@ -8,3 +8,7 @@ set bell-style visible
 # Tab complete cycle through options instead of listing
 "\t": menu-complete
 "\e[Z": menu-complete-backward
+
+# Don't overwrite history entries
+# https://unix.stackexchange.com/a/131712
+set revert-all-at-newline on
